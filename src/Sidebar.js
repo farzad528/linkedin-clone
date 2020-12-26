@@ -3,11 +3,22 @@ import React from "react";
 import "./Sidebar.css";
 
 function Sidebar() {
+  const recentItem = (topic) => (
+
+  
+    <div className="sidebar__recentItem">
+      <span className="sidebar__hash">#</span>
+      <p>{topic}</p>
+    </div>
+  );
   return (
     <div className="sidebar">
       <div className="sidebar__top">
-        <img src="https://tandsgo.com/wp-content/uploads/2015/03/linkedin-27.jpg" alt="" />
-        <Avatar className="sidebar__avatar"/>
+        <img
+          src="https://tandsgo.com/wp-content/uploads/2015/03/linkedin-27.jpg"
+          alt=""
+        />
+        <Avatar className="sidebar__avatar" />
         <h2>Farzad Sunavala</h2>
         <h4>fsunavala1@gmail.com</h4>
       </div>
@@ -23,7 +34,12 @@ function Sidebar() {
         </div>
       </div>
       <div className="sidebar__bottom">
-          <p>recent</p>
+        <p>Recent</p>
+        {recentItem("reactjs")}
+        {recentItem("programming")}
+        {recentItem("softwareengineering")}
+        {recentItem("design")}
+        {recentItem("developer")}
       </div>
     </div>
   );
