@@ -21,11 +21,12 @@ function Widgets() {
         <Info />
       </div>
 
-      {newsArticle("PAPA React is back", "Top news")}
-      {newsArticle("Coronavirus: US updates", "Top news")}
-      {newsArticle("Coronavirus: US updates", "Top news")}
-      {newsArticle("Coronavirus: US updates", "Top news")}
-      {newsArticle("Coronavirus: US updates", "Top news")}
+      {newsArticle("FullStackFarzzy is BACK!", "Top news - 102,901 readers")}
+      {newsArticle("ReactJS ranked top Front-End Framework", "21h ago - 12,906 readers")}
+      {newsArticle("150% growth in demand for developers through 2025", "20h ago - 16,601 readers")}
+      {newsArticle("Coronavirus U.S. Updates", "16h ago - 2,740 readers")}
+      {newsArticle("Are we too dependent on Apple?", "12h ago - 1,999 readers")}
+      {newsArticle("Couples say 'I-do'...to real estate", "5h ago - 502 readers")}
     </div>
   );
 }
