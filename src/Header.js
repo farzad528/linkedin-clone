@@ -7,10 +7,19 @@ import {
   SupervisorAccount,
 } from "@material-ui/icons";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "./features/userSlice";
+import { auth } from "./firebase";
 import "./Header.css";
 import HeaderOption from "./HeaderOption";
 
 function Header() {
+  const dispatch = useDispatch();
+
+  const logoutOfApp = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
   return (
     <div className="header">
       <div className="header__left">
@@ -20,7 +29,7 @@ function Header() {
         />
         <div className="header__search">
           <Search />
-          <input type="text" />
+          <input placeholder="Search" type="text" />
         </div>
       </div>
 
@@ -30,8 +39,7 @@ function Header() {
         <HeaderOption Icon={BusinessCenter} title="Jobs" />
         <HeaderOption Icon={Chat} title="Messaging" />
         <HeaderOption Icon={Notifications} title="Notifications" />
-        <HeaderOption avatar="https://i2.wp.com/wzycongress.org/wp-content/uploads/2019/05/Farzad-Sunavala.jpg?w=1080&ssl=1" title="me" />
-
+        <HeaderOption avatar={true} title="me" onClick={logoutOfApp} />
       </div>
     </div>
   );
