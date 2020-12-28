@@ -6,6 +6,8 @@ import {
   ThumbUpAltOutlined,
 } from "@material-ui/icons";
 import React from "react";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
 import InputOption from "./InputOption";
 import "./Post.css";
 
@@ -13,7 +15,7 @@ function Post({ name, description, message, photoUrl }) {
   return (
     <div className="post">
       <div className="post__header">
-        <Avatar />
+        <Avatar src={photoUrl}>{name[0]}</Avatar>
         <div className="post__info">
           <h2>{name}</h2>
           <p>{description}</p>
